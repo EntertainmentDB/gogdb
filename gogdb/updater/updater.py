@@ -478,10 +478,10 @@ async def main():
 
     tasks = sys.argv[1:]
     if not tasks:
-        eprint("Updater missing task argument: [all, download, index, startpage, charts, versions, dependencies, backref, filelist]")
+        eprint("Updater missing task argument: [all, download, index, startpage, charts, versions, dependencies, backref, filelist, idmapping]")
         exit(1)
     if "all" in tasks:
-        tasks = ["download", "index", "startpage", "charts", "versions"]
+        tasks = ["download", "index", "startpage", "charts", "versions", "idmapping"]
 
     processors = []
     if "index" in tasks:
