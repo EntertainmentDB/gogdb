@@ -3,8 +3,9 @@ Description=GOG DB
 After=network.target
 
 [Service]
-User=www-data
-Group=www-data
+User=gogdb-web
+Group=gogdb-web
+DynamicUser=yes
 WorkingDirectory=/usr/local/share/gogdb
 Environment="GOGDB_CONFIG=/etc/gogdb/config-production.py"
 ExecStart=/usr/bin/uvicorn --host 127.0.0.1 --port 8001 --workers 4 gogdb.application:app
