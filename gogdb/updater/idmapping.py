@@ -18,7 +18,12 @@ class IdMappingProcessor:
         if product is None:
             return
         if product.store_state:
-            if product.link_store.split("/")[-1] != product.slug:
+            if product.link_store is None:
+                logger.error(f"Product {product.id} is in store but has no store link!")
+            elif product.slug is None:
+                logger.error(f"Product {product.id} is in store but has no slug!")
+                return
+            elif product.link_store.split("/")[-1] != product.slug:
                 logger.error(f"Mismatched slug and store link: {product.slug} {product.link_store}")
             self.store_to_id[product.slug] = product.id
             self.id_to_store[product.id] = product.slug
