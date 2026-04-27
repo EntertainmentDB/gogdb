@@ -77,6 +77,11 @@ class Download:
     files: List[File]
 
 @defaultdataclass
+class Property:
+    name: str
+    slug: str
+
+@defaultdataclass
 class BonusDownload(Download):
     bonus_type: str
     count: int
@@ -222,6 +227,7 @@ class Product:
     access: int
 
     features: List[Feature]
+    properties: List[Property]
     localizations: List[Localization]
     tags: List[Tag]
     cs_systems: List[str]

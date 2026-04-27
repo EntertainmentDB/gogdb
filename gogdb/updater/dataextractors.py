@@ -116,6 +116,14 @@ def extract_properties_v2(prod, v2_cont):
             name=x["name"]
         ) for x in v2_embed["features"]
     ]
+
+    prod.properties = [
+        model.Property(
+            name=x["name"],
+            slug=x["slug"]
+        ) for x in v2_embed["properties"]
+    ]
+
     localizations_map = collections.defaultdict(lambda: model.Localization())
     for loc in v2_embed["localizations"]:
         loc_embed = loc["_embedded"]
