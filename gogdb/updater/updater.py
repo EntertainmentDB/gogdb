@@ -79,9 +79,12 @@ class CatalogEntry:
     price_final: decimal.Decimal
     rating: int
     state: str
-    position: int  # This will be filled out by default
-    pos_bestselling: int = 0 # This is only set after manually merging both results
-    pos_trending: int = 0 # See above
+    position: int  # This will be filled out by get_catalog
+    # This is only set after manually merging both results. Due to the 10000 games bug in the
+    # catalog api a product may be for sale but have no bestselling position. Use a high default
+    # to sort them last
+    pos_bestselling: int = 100000
+    pos_trending: int = 100000
 
 async def get_catalog(session, params, pagination_method="page"):
     current_page = 1

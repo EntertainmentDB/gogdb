@@ -41,10 +41,10 @@ class StartpageProcessor:
             added_on = FIRST_DATE
         rank_trending = prod.rank_trending
         if rank_trending is None:
-            rank_trending = 100000  # some high number
+            rank_trending = 200000  # some high number
         rank_bestselling = prod.rank_bestselling
         if rank_bestselling is None:
-            rank_bestselling = 1000000
+            rank_bestselling = 200000
 
         last_build = FIRST_DATE
         changelog = data.changelog

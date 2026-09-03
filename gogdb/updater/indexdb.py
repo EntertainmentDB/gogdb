@@ -53,7 +53,7 @@ async def index_product(prod, cur):
     if prod.rank_bestselling is not None:
         sale_rank = prod.rank_bestselling
     else:
-        sale_rank = 100000  # some high number
+        sale_rank = 200000  # some high number
     await cur.execute(
         "INSERT INTO products VALUES (?, ?, ?, ?, ?, ?, ?)",
         (
