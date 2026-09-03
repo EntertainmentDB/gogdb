@@ -236,6 +236,7 @@ class Product:
     is_using_dosbox: bool
 
     developers: List[str]
+    publishers: List[str]
     publisher: str
     copyright: str
 

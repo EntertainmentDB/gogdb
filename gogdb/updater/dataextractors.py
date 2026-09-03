@@ -151,6 +151,7 @@ def extract_properties_v2(prod, v2_cont):
     prod.is_using_dosbox = v2_cont["isUsingDosBox"]
 
     prod.developers = [x["name"] for x in v2_embed["developers"]]
+    prod.publishers = [x["name"] for x in v2_embed["publishers"]]
     prod.publisher = v2_embed["publisher"]["name"]
     prod.copyright = v2_cont["copyrights"] or None
 
